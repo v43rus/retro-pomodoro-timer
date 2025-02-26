@@ -111,6 +111,20 @@ const MusicPlayer: React.FC = () => {
         }
     }, [selectedStream, player, isPlayerReady]);
 
+    const onPlayerStateChange: YouTubeProps['onStateChange'] = (event) => {
+        switch (event.data) {
+            case YT.PlayerState.PLAYING:
+                setIsPlaying(true);
+                break;
+            case YT.PlayerState.PAUSED:
+            case YT.PlayerState.ENDED:
+                setIsPlaying(false);
+                break;
+            default:
+                break;
+        }
+    };
+
     const togglePlay = () => {
         if (!player) return;
         try {
@@ -186,6 +200,7 @@ const MusicPlayer: React.FC = () => {
                     }}
                     onReady={onPlayerReady}
                     onError={onPlayerError}
+                    onStateChange={onPlayerStateChange}
                 />
             </div>
         </div>
