@@ -1,6 +1,6 @@
 {
   "name": "retro-pomodoro-timer",
-  "homepage": "https://v43rus.github.io/retro-pomodoro-timer",
+  "homepage": "https://v43rus.github.io/retro-pomodoro-timer/",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
@@ -48,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

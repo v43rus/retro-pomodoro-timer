@@ -100,7 +100,7 @@ const MusicPlayer: React.FC = () => {
     }, [volume, player]);
 
     useEffect(() => {
-        if (player) {
+        if (player && isPlayerReady) {
             try {
                 player.loadVideoById(selectedStream);
                 player.pauseVideo();
@@ -109,7 +109,7 @@ const MusicPlayer: React.FC = () => {
                 return;
             }
         }
-    }, [selectedStream, player]);
+    }, [selectedStream, player, isPlayerReady]);
 
     const togglePlay = () => {
         if (!player) return;
