@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/retro-pomodoro-timer/static/css/main.d6a0963b.css",
-    "main.js": "/retro-pomodoro-timer/static/js/main.26d98596.js",
+    "main.js": "/retro-pomodoro-timer/static/js/main.7b625c80.js",
     "static/js/453.c156ddbb.chunk.js": "/retro-pomodoro-timer/static/js/453.c156ddbb.chunk.js",
     "static/media/shockwave.ttf": "/retro-pomodoro-timer/static/media/shockwave.62b66f8c0bf180f81889.ttf",
     "index.html": "/retro-pomodoro-timer/index.html",
     "main.d6a0963b.css.map": "/retro-pomodoro-timer/static/css/main.d6a0963b.css.map",
-    "main.26d98596.js.map": "/retro-pomodoro-timer/static/js/main.26d98596.js.map",
+    "main.7b625c80.js.map": "/retro-pomodoro-timer/static/js/main.7b625c80.js.map",
     "453.c156ddbb.chunk.js.map": "/retro-pomodoro-timer/static/js/453.c156ddbb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d6a0963b.css",
-    "static/js/main.26d98596.js"
+    "static/js/main.7b625c80.js"
   ]
 }
