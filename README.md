@@ -1,5 +1,5 @@
 # Project Preview:
-https://github.com/v43rus/retro-pomodoro-timer
+[https://github.com/v43rus/retro-pomodoro-timer](https://v43rus.github.io/retro-pomodoro-timer/)
 
 # Getting Started with Create React App
 
