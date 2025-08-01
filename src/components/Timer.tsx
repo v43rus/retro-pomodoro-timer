@@ -6,8 +6,15 @@ interface TimerProps {
 }
 
 const Timer: React.FC<TimerProps> = ({ onResetCompletion }) => {
-    const [time, setTime] = useState<number>(1500); // 25 minutes in seconds
+    // Timer durations in seconds
+    const WORK_TIME = 1500; // 25 minutes
+    const SHORT_BREAK_TIME = 300; // 5 minutes
+    const LONG_BREAK_TIME = 900; // 15 minutes
+
+    const [time, setTime] = useState<number>(WORK_TIME);
     const [isActive, setIsActive] = useState<boolean>(false);
+    const [isBreak, setIsBreak] = useState<boolean>(false);
+    const [completedSessions, setCompletedSessions] = useState<number>(0);
 
     // Load sound effects
     const lastSecondsSound = useMemo(() => {
@@ -24,9 +31,27 @@ const Timer: React.FC<TimerProps> = ({ onResetCompletion }) => {
 
     const resetOnCompletion = useCallback(() => {
         setIsActive(false);
-        setTime(1500); // Reset to 25 minutes
+        
+        if (!isBreak) {
+            // Work session completed, start break
+            const newCompletedSessions = completedSessions + 1;
+            setCompletedSessions(newCompletedSessions);
+            setIsBreak(true);
+            
+            // Every 4th session gets a long break
+            if (newCompletedSessions % 4 === 0) {
+                setTime(LONG_BREAK_TIME);
+            } else {
+                setTime(SHORT_BREAK_TIME);
+            }
+        } else {
+            // Break completed, start work session
+            setIsBreak(false);
+            setTime(WORK_TIME);
+        }
+        
         onResetCompletion(); // Emit event to parent
-    }, [onResetCompletion]);
+    }, [isBreak, completedSessions, onResetCompletion, WORK_TIME, SHORT_BREAK_TIME, LONG_BREAK_TIME]);
 
     useEffect(() => {
         let interval: NodeJS.Timeout | undefined;
@@ -53,6 +78,17 @@ const Timer: React.FC<TimerProps> = ({ onResetCompletion }) => {
         }
     }, [time, lastSecondsSound, completionSound, resetOnCompletion]);
 
+    // Update document title based on timer state
+    useEffect(() => {
+        if (time === 0 || isBreak) {
+            document.title = 'PT - Break!';
+        } else if (isActive) {
+            document.title = `PT - ${formatTime(time)}`;
+        } else {
+            document.title = `PT - ${formatTime(time)} (Paused)`;
+        }
+    }, [time, isActive, isBreak]);
+
     const formatTime = (seconds: number) => {
         const minutes = Math.floor(seconds / 60);
         const remainingSeconds = seconds % 60;
@@ -61,11 +97,13 @@ const Timer: React.FC<TimerProps> = ({ onResetCompletion }) => {
 
     const handleStartPause = () => {
         setIsActive(!isActive);
+        setIsBreak(false);
     };
 
     const handleReset = () => {
         setIsActive(false);
-        setTime(1500);
+        setIsBreak(false);
+        setTime(WORK_TIME);
     };
 
     const lowerTime = () => {
