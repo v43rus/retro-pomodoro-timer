@@ -73,8 +73,8 @@ const TimerPopup: React.FC<TimerPopupProps> = ({ isOpen, onClose, chooseBreak, o
                 <h1>Time for a Break!</h1>
                 <p>Would you prefer a short or a long break?</p>
 
-                <button onClick={() => breakSetup(5)}>Short Break (5min)</button>
-                <button onClick={() => breakSetup(10)}>Long Break (15min)</button>
+                <button onClick={() => breakSetup(300)}>Short Break (5min)</button>
+                <button onClick={() => breakSetup(900)}>Long Break (15min)</button>
             </div>}
 
             {isOpen && !chooseBreak && <div id="timer-popup">
