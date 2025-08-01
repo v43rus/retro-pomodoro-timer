@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/retro-pomodoro-timer/static/css/main.d6a0963b.css",
-    "main.js": "/retro-pomodoro-timer/static/js/main.7b625c80.js",
+    "main.css": "/retro-pomodoro-timer/static/css/main.3dfeb75c.css",
+    "main.js": "/retro-pomodoro-timer/static/js/main.889ffeea.js",
     "static/js/453.c156ddbb.chunk.js": "/retro-pomodoro-timer/static/js/453.c156ddbb.chunk.js",
     "static/media/shockwave.ttf": "/retro-pomodoro-timer/static/media/shockwave.62b66f8c0bf180f81889.ttf",
     "index.html": "/retro-pomodoro-timer/index.html",
-    "main.d6a0963b.css.map": "/retro-pomodoro-timer/static/css/main.d6a0963b.css.map",
-    "main.7b625c80.js.map": "/retro-pomodoro-timer/static/js/main.7b625c80.js.map",
+    "main.3dfeb75c.css.map": "/retro-pomodoro-timer/static/css/main.3dfeb75c.css.map",
+    "main.889ffeea.js.map": "/retro-pomodoro-timer/static/js/main.889ffeea.js.map",
     "453.c156ddbb.chunk.js.map": "/retro-pomodoro-timer/static/js/453.c156ddbb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6a0963b.css",
-    "static/js/main.7b625c80.js"
+    "static/css/main.3dfeb75c.css",
+    "static/js/main.889ffeea.js"
   ]
 }
